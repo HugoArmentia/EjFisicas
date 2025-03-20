@@ -2,39 +2,39 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class Trigger : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
-  
-    void OnCollisionEnter(Collision collision)
+
+    void OnTriggerEnter(UnityEngine.Collider other)
     {
-        if (collision.gameObject.name == "Capsule")  
+        if (other.gameObject.name == "Capsule")
         {
             Debug.Log("Comienza a chocar");
-            Destroy(this); 
+            Destroy(this);
         }
     }
-    void OnCollisionStay(Collision collision)
+    void OnTriggerStay(UnityEngine.Collider other)
     {
-        if (collision.gameObject.name == "Capsule")
+        if (other.gameObject.name == "Capsule")
         {
             Debug.Log("Colision continua");
         }
 
     }
-    void OnCollisionExit(Collision collision)
+    void OnTriggerExit(UnityEngine.Collider other)
     {
-        if (collision.gameObject.name == "Capsule")
+        if (other.gameObject.name == "Capsule")
         {
             Debug.Log("Ha salido de la colision");
         }
