@@ -11,7 +11,25 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
     }
-
+    private void Movement()
+    {
+        if (Input.GetKey(KeyCode.W))
+        {
+            transform.position += Time.deltaTime * Vector3.forward * speed;
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            transform.position += Time.deltaTime * Vector3.back * speed;
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.position += Time.deltaTime * Vector3.left * speed;
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            transform.position += Time.deltaTime * Vector3.right * speed;
+        }
+    }
     void Update()
     {
         
